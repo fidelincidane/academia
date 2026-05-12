@@ -1,0 +1,166 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.header {
+  background: v.$color-black;
+  padding: 0.5rem 1rem;
+  position: relative;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    flex: 1;
+
+    img {
+      display: block;
+      height: 80px;
+
+      @include m.tablet {
+        height: 70px;
+      }
+
+      @include m.desktop {
+        height: 90px;
+      }
+    }
+  }
+
+  &__hamburger {
+    display: block;
+    background: none;
+    border: none;
+    color: v.$color-white;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    @include m.tablet {
+      display: none;
+    }
+  }
+
+  &__nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: v.$color-black;
+    padding: 4rem 2rem;
+    transition: right 0.3s;
+    z-index: 10;
+
+    &.is-open {
+      right: 0;
+    }
+
+    @include m.tablet {
+      position: static;
+      width: auto;
+      height: auto;
+      padding: 0;
+
+      &.is-open {
+        right: auto;
+      }
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    a {
+      color: v.$color-white;
+      font-size: 1.1rem;
+
+      &:hover,
+      &.is-active {
+        color: v.$color-green;
+      }
+    }
+
+    // Mobile: submenu items appear inline
+    .header__submenu {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding-left: 1rem;
+
+      @include m.tablet {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: v.$color-black;
+        padding: 1rem;
+        min-width: 180px;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        a {
+          white-space: nowrap;
+        }
+      }
+
+      @include m.desktop {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        gap: 1rem;
+        padding: 0;
+        background: none;
+        min-width: auto;
+      }
+    }
+
+    @include m.tablet {
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  // "Más" dropdown trigger
+  &__more {
+    &-trigger {
+      display: none;
+
+      @include m.tablet {
+        display: inline;
+        color: v.$color-white;
+        font-size: 1.1rem;
+        cursor: pointer;
+        user-select: none;
+
+        &:hover {
+          color: v.$color-green;
+        }
+      }
+
+      @include m.desktop {
+        display: none;
+      }
+    }
+
+    @include m.tablet {
+      position: relative;
+
+      &:hover .header__submenu {
+        display: flex;
+      }
+    }
+
+    @include m.desktop {
+      position: static;
+
+      &:hover .header__submenu {
+        display: flex;
+      }
+    }
+  }
+}

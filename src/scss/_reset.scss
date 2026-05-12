@@ -1,0 +1,33 @@
+@use "variables" as v;
+
+html,
+body {
+  overflow-x: hidden;
+}
+body {
+  background: v.$color-white;
+  color: v.$color-black;
+  font-family: v.$font-family;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  background-image: no-repeat;
+}
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

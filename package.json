@@ -1,0 +1,19 @@
+{
+  "name": "proyecto_html",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --open",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "sass": "^1.97.2",
+    "vite": "^7.3.0"
+  },
+  "dependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
