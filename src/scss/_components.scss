@@ -9,17 +9,25 @@
   font-weight: 600;
   border-radius: 4px;
   text-decoration: none;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 
-  &:hover {
-    opacity: 0.85;
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.85;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
   }
 
   &--outline {
     background: transparent;
     border: 2px solid v.$color-green;
     color: v.$color-green;
+  }
+
+  &--brown {
+    background: #bfaf96;
   }
 }
 
@@ -107,16 +115,79 @@
 
 .section {
   padding: 3rem 1rem;
+  background: v.$color-light-bg;
+
+  &--alt {
+    background: #e8e8e8;
+  }
+
+  &--darker {
+    background: #dcdcdc;
+  }
 
   &__title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
     margin-bottom: 2rem;
+
+    &--sm {
+      font-size: 2rem;
+      margin-top: 2rem;
+    }
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: v.$color-dim-gray;
   }
 
   &__text {
     text-align: center;
     margin-bottom: 2rem;
+  }
+
+  &--lg {
+    .section__title {
+      font-size: 2.5rem;
+      text-shadow: 0 6px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    .section__text {
+      font-size: 1.2rem;
+    }
+
+    @include m.desktop {
+      padding: 5rem 2rem 3rem;
+
+      .section__title {
+        font-size: 3.5rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      }
+
+      .section__text {
+        font-size: 1.4rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  &__card {
+    background: #d4c5b0;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }
 
   &__actions {
@@ -141,6 +212,15 @@
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+    }
+  }
 
   &__figure img {
     width: 100%;
@@ -164,6 +244,25 @@
         height: 100%;
         object-fit: cover;
       }
+    }
+
+    .card__title {
+      font-size: 1.2rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .card__text {
+      font-size: 0.9rem;
+      color: v.$color-gray;
+      font-style: italic;
+    }
+  }
+
+  &--centered {
+    text-align: center;
+
+    .btn {
+      margin-top: 0.5rem;
     }
   }
 

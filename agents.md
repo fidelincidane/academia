@@ -66,7 +66,7 @@ academia/
 ### Naming
 - Bloques: `.header`, `.hero`, `.card`, `.btn`, `.footer`, `.section`
 - Elementos: `.header__container`, `.card__title`, `.hero__content`, `.header__more-trigger`
-- Modificadores: `.btn--outline`, `.card--horizontal`, `.card--profile`
+- Modificadores: `.btn--outline`, `.btn--brown`, `.card--horizontal`, `.card--profile`
 - Estado: `.is-active`, `.is-open`
 - Utilidades: `.btn` (reutilizable), `.section` (sección genérica)
 
@@ -79,12 +79,13 @@ $color-white: #ffffff
 $color-dim-gray: #696969
 $color-lavender: #e6e6fa
 $color-silver: #c0c0c0
-$font-family: "Open Sans", sans-serif
+$color-light-bg: #f5f5f5
+$font-family: "Inter", sans-serif
 $breakpoint-tablet: 768px
 $breakpoint-desktop: 1024px
 ```
 
-## Estado Actual del Proyecto (12/05/2026)
+## Estado Actual del Proyecto (13/05/2026)
 
 ### Navegación (`_nav.scss`)
 - **Móvil**: menú hamburguesa con todos los items visibles al abrir (submenu items inline)
@@ -100,14 +101,17 @@ $breakpoint-desktop: 1024px
 - Overlay oscuro al 50%
 
 ### Componentes (`_components.scss`)
-- `.btn`: fondo cyan, texto negro. Modificador `--outline` (borde cyan, fondo transparente)
-- `.card`: tarjeta blanca con bordes redondeados. Modificadores: `--horizontal` (imagen + texto lado a lado), `--profile` (foto circular 150x150px)
-- `.section`: sección genérica con padding responsive
+- `.btn`: fondo cyan, texto negro. Modificador `--outline` (borde cyan, fondo transparente), `--brown` (marrón claro)
+- `.card`: tarjeta blanca con bordes redondeados. Hover 3D: translateY(-8px) + scale(1.02) + sombra (solo desktop). Modificadores: `--horizontal` (imagen + texto lado a lado), `--profile` (foto circular 150x150px), `--centered` (contenido centrado).
+- `.section`: sección genérica con padding responsive. Modificadores: `--alt` (gris más oscuro), `--darker` (gris aún más oscuro), `--lg` (títulos más grandes con sombra)
+- `.section__card`: tarjeta interior beige (#d4c5b0) para destacar contenido
 - `.footer`: fondo negro, enlaces en cyan
 
 ### Páginas
 - **Todas las páginas** tienen header y footer unificados con el mismo menú
 - **quienes_somos.html**: cards con fotos de profesores circulares (`.card--profile`)
+- **Favicon**: `logo_academia.png` en todas las páginas
+- **Fondo body**: `#e8e8e8` uniforme en toda la web
 - **main.js**: toggle del menú hamburguesa con clase `.is-open`
 
 ## Workflow de Trabajo
@@ -117,6 +121,7 @@ $breakpoint-desktop: 1024px
 3. **Pasos**: leer archivo → proponer cambios → escribir → verificar compilación
 4. **Servidor**: ejecutar `npm run dev` para ver cambios en vivo
 5. **Mantener agents.md** actualizado con decisiones tomadas
+6. **Hablar cada respuesta**: después de cada respuesta escrita, ejecutar `.\speak.ps1 "texto"` para que el usuario escuche la respuesta
 
 ## Comandos Útiles
 
