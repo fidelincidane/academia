@@ -1,0 +1,35 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: v.$color-green;
+  color: v.$color-black;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+  transition:
+    opacity 0.2s,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer;
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.85;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  &--outline {
+    background: transparent;
+    border: 2px solid v.$color-green;
+    color: v.$color-green;
+  }
+
+  &--brown {
+    background: #bfaf96;
+  }
+}

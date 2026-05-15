@@ -84,7 +84,6 @@
       }
     }
 
-    // Mobile: submenu items appear inline
     .header__submenu {
       display: flex;
       flex-direction: column;
@@ -125,7 +124,6 @@
     }
   }
 
-  // "Más" dropdown trigger
   &__more {
     &-trigger {
       display: none;

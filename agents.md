@@ -26,8 +26,13 @@ academia/
 │   │   ├── _variables.scss
 │   │   ├── _reset.scss
 │   │   ├── _mixins.scss
-│   │   ├── _nav.scss
-│   │   └── _components.scss
+│   │   ├── _menu.scss     # Navegación (header + hamburguesa + dropdown)
+│   │   ├── _botones.scss  # .btn y modificadores
+│   │   ├── _hero.scss     # Hero del index con fotos cíclicas
+│   │   ├── _secciones.scss # .section, .section__title, .section__card
+│   │   ├── _tarjetas.scss  # .card y modificadores (profile, centered, horizontal)
+│   │   ├── _footer.scss    # Pie de página
+│   │   └── ... (por página: _cursos.scss, _blog.scss, _contacto.scss, etc.)
 │   ├── js/
 │   │   └── main.js        # Toggle menú hamburguesa
 │   └── style.css          # Compilado

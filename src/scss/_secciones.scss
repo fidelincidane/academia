@@ -1,0 +1,103 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.section {
+  padding: 1rem 1rem 2rem;
+  background: v.$color-light-bg;
+
+  &--alt {
+    background: #e8e8e8;
+  }
+
+  &--darker {
+    background: #dcdcdc;
+  }
+
+  &__title {
+    font-size: 2rem;
+    text-align: center;
+    margin: 0 auto 4rem;
+    padding: 0.75rem 2rem;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    width: fit-content;
+
+    @include m.desktop {
+      margin-bottom: 12rem !important;
+    }
+
+    &--sm {
+      font-size: 2rem;
+      margin: 2rem auto 8rem;
+    }
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: v.$color-dim-gray;
+  }
+
+  &__text {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &--lg {
+    .section__title {
+      font-size: 2.5rem;
+      text-shadow: 0 6px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    .section__text {
+      font-size: 1.2rem;
+    }
+
+    @include m.desktop {
+      padding: 2rem 2rem 2rem;
+
+      .section__title {
+        font-size: 3.5rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      }
+
+      .section__text {
+        font-size: 1.4rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  &__card {
+    background: #d4c5b0;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  &__actions {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  @include m.tablet {
+    padding: 1.5rem 3rem 3rem;
+    max-width: 100%;
+  }
+
+  @include m.desktop {
+    padding: 2rem 5rem 4rem;
+    max-width: 100%;
+  }
+}

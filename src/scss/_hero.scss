@@ -1,0 +1,95 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.hero {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  background-color: v.$color-black;
+  background-position: center 30%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: hero-cycle 15s infinite;
+
+  @include m.tablet {
+    background-size: auto 100%;
+    background-position: center center;
+  }
+
+  @include m.desktop {
+    background-size: auto 100%;
+    background-position: center center;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    color: v.$color-white;
+    padding: 1.5rem;
+    padding-top: 35vh;
+    padding-bottom: 2rem;
+    text-align: left;
+    width: 100%;
+    max-width: 600px;
+    margin-right: auto;
+
+    @include m.tablet {
+      padding: 2rem;
+    }
+
+    @include m.desktop {
+      padding: 3rem;
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+
+    @include m.tablet {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    @include m.desktop {
+      font-size: 3rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+
+    @include m.tablet {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+@keyframes hero-cycle {
+  0%,
+  30% {
+    background-image: url("/img/quienes-somos/img_bienvenido.jpg");
+  }
+  33.33%,
+  63.33% {
+    background-image: url("/img/quienes-somos/img_chema.png");
+  }
+  66.66%,
+  96.66% {
+    background-image: url("/img/quienes-somos/img_azaustre.png");
+  }
+  100% {
+    background-image: url("/img/quienes-somos/img_bienvenido.jpg");
+  }
+}

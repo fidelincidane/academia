@@ -1,0 +1,16 @@
+@use "variables" as v;
+
+.footer {
+  background: v.$color-black;
+  color: v.$color-white;
+  text-align: center;
+  padding: 2rem 1rem;
+
+  a {
+    color: v.$color-green;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -9,7 +9,10 @@
   font-weight: 600;
   border-radius: 4px;
   text-decoration: none;
-  transition: opacity 0.2s, transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    opacity 0.2s,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   cursor: pointer;
 
   @media (hover: hover) {
@@ -107,14 +110,25 @@
 }
 
 @keyframes hero-cycle {
-  0%, 30% { background-image: url("/img/quienes-somos/img_bienvenido.jpg"); }
-  33.33%, 63.33% { background-image: url("/img/quienes-somos/img_chema.png"); }
-  66.66%, 96.66% { background-image: url("/img/quienes-somos/img_azaustre.png"); }
-  100% { background-image: url("/img/quienes-somos/img_bienvenido.jpg"); }
+  0%,
+  30% {
+    background-image: url("/img/quienes-somos/img_bienvenido.jpg");
+  }
+  33.33%,
+  63.33% {
+    background-image: url("/img/quienes-somos/img_chema.png");
+  }
+  66.66%,
+  96.66% {
+    background-image: url("/img/quienes-somos/img_azaustre.png");
+  }
+  100% {
+    background-image: url("/img/quienes-somos/img_bienvenido.jpg");
+  }
 }
 
 .section {
-  padding: 3rem 1rem;
+  padding: 1rem 1rem 2rem;
   background: v.$color-light-bg;
 
   &--alt {
@@ -128,22 +142,30 @@
   &__title {
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 2rem;
+    margin: 0 auto 4rem;
+    padding: 0.75rem 2rem;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    width: fit-content;
+
+    @include m.desktop {
+      margin-bottom: 12rem;
+    }
 
     &--sm {
       font-size: 2rem;
-      margin-top: 2rem;
+      margin: 2rem auto 8rem;
     }
   }
 
   h2 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin-top: 2rem;
     margin-bottom: 0.5rem;
   }
 
   p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.6;
     color: v.$color-dim-gray;
   }
@@ -164,7 +186,7 @@
     }
 
     @include m.desktop {
-      padding: 5rem 2rem 3rem;
+      padding: 2rem 2rem 2rem;
 
       .section__title {
         font-size: 3.5rem;
@@ -196,14 +218,13 @@
   }
 
   @include m.tablet {
-    padding: 4rem 2rem;
-    max-width: 1024px;
-    margin: 0 auto;
+    padding: 1.5rem 3rem 3rem;
+    max-width: 100%;
   }
 
   @include m.desktop {
-    padding: 5rem 2rem;
-    max-width: 1200px;
+    padding: 2rem 5rem 4rem;
+    max-width: 100%;
   }
 }
 
@@ -211,8 +232,10 @@
   background: v.$color-white;
   border-radius: 8px;
   overflow: hidden;
-  margin-bottom: 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 2rem;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 
   @media (hover: hover) {
