@@ -23,12 +23,12 @@
     width: fit-content;
 
     @include m.desktop {
-      margin-bottom: 12rem !important;
+      margin-bottom: 4rem;
     }
 
     &--sm {
       font-size: 2rem;
-      margin: 2rem auto 8rem;
+      margin: 2rem auto 1rem;
     }
   }
 
@@ -50,15 +50,6 @@
   }
 
   &--lg {
-    .section__title {
-      font-size: 2.5rem;
-      text-shadow: 0 6px 25px rgba(0, 0, 0, 0.35);
-    }
-
-    .section__text {
-      font-size: 1.2rem;
-    }
-
     @include m.desktop {
       padding: 2rem 2rem 2rem;
 
@@ -84,6 +75,41 @@
     padding: 2rem;
     text-align: center;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    @include m.desktop {
+      .section__title {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &--cursos-index {
+    .section__title {
+      margin-bottom: 1rem;
+    }
+
+    @include m.desktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+
+      .section__title {
+        grid-column: 1 / -1;
+      }
+
+      .section__actions {
+        grid-column: 1 / -1;
+      }
+
+      .card--centered {
+        margin-bottom: 0;
+
+        .card__figure img {
+          max-height: 200px;
+          object-fit: cover;
+        }
+      }
+    }
   }
 
   &__actions {

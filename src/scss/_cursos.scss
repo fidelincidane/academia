@@ -1,6 +1,49 @@
 @use "variables" as v;
 @use "mixins" as m;
 
-.section--cursos .section__title {
-  width: 100%;
+.section--cursos {
+  .section__title {
+    width: 100%;
+    background: none;
+    padding: 0;
+    margin-bottom: 1rem;
+
+    @include m.tablet {
+      margin-bottom: 2rem;
+    }
+    @include m.desktop {
+      font-size: 2.5rem;
+      margin-bottom: 4rem;
+    }
+  }
+
+  .section__text {
+    margin-bottom: 0;
+
+    @include m.desktop {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.section--curso-detalle {
+  @include m.tablet {
+    text-align: center;
+
+    figure {
+      display: flex;
+      justify-content: center;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    p {
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 }

@@ -59,6 +59,10 @@
 
     .btn {
       margin-top: 0.5rem;
+
+      @include m.desktop {
+        margin-top: auto;
+      }
     }
   }
 
@@ -91,6 +95,16 @@
       .card__body {
         flex: 1;
       }
+    }
+  }
+
+  @include m.desktop {
+    &__body {
+      padding: 0.75rem;
+    }
+
+    &--horizontal .card__figure {
+      flex: 0 0 150px;
     }
   }
 }
